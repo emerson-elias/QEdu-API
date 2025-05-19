@@ -1,5 +1,6 @@
 
-// Trazer o gráfico de IDEB da API do QEdu
+// ============= Trazer o gráfico de IDEB da API do QEdu =====================
+
 document.addEventListener('DOMContentLoaded', function () {
     const loadingElement = document.getElementById('loading')
     const errorElement = document.getElementById('error')
@@ -88,12 +89,12 @@ document.addEventListener('DOMContentLoaded', function () {
 })
 
 
+// =============== Gráfico e Chamada api pra dados do enem =============================
 
 
-// Gráfico e Chamada api pra dados do enem
 document.addEventListener('DOMContentLoaded', function () {
-    const loading = document.getElementById('loading-2')
-    const error = document.getElementById('error-2')
+    const loading = document.getElementById('loading-enem')
+    const error = document.getElementById('error-enem')
     const canvas = document.getElementById('enemChart')
 
     const apiUrl = 'https://api.qedu.org.br/v1/enem'

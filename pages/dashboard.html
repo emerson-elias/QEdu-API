@@ -57,29 +57,32 @@
       </div>
     </header>
 
-    <section class="boxx">
-      <div id="loading">Carregando dados...</div>
-      <div id="error" style="display: none"></div>
-    </section>
-
     <section class="graf-edu">
       <div class="card-edu">
         <h2>Evasão Escolar</h2>
+       <!-- <div id="loading">Carregando dados...</div>
+        <div id="error"></div> MENSAGEM DE CARREGAMENTO -->
         <canvas id="enem"></canvas>
       </div>
 
       <div class="card-edu">
         <h2>Nota do IDEB</h2>
+        <div id="loading" class="msg-loading">Carregando dados...</div>
+        <div id="error"></div>
         <canvas id="idebChart2"></canvas>
       </div>
 
       <div class="card-edu">
         <h2>Notas do Enem</h2>
+        <div id="loading-enem" class="msg-loading">Carregando dados...</div>
+        <div id="error-enem"></div>
         <canvas id="enemChart"></canvas>
       </div>
 
       <div class="card-edu">
         <h2>Infraestrutura Escolar</h2>
+       <!-- <div id="loading">Carregando dados...</div>
+        <div id="error"></div> MENSAGEM DE CARREGAMENTO -->
         <canvas id="infraChart"></canvas>
       </div>
     </section>

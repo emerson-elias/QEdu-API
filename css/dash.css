@@ -175,6 +175,13 @@ header .collapse.open span:nth-child(3) {
   color: var(--color-black-smoker);
 }
 
+.graf-edu .card-edu .msg-loading{
+  font-size: 1.3vmax;
+  font-weight: bold;
+  color: var(--color-black-smoker);
+  transform: translateY(5vmax);
+}
+
 /* =============================== CSS DASHBOARD ================================== */
 
 .section-land{
@@ -224,14 +231,6 @@ header .collapse.open span:nth-child(3) {
   background-position: right center; 
   color: var(--color-blue-smoker);
   text-decoration: none;
-}
-
-/* =============================== CSS MESSAGEM DE ERRO DO GRÁFICO ================================== */
-
-section .boxx{
-  position: relative;
-  width: 100vw;
-  height: 100vh;
 }
 
 /* =============================== CSS RODAPÉ ================================== */
@@ -500,8 +499,12 @@ a {
 }
 
 @media (max-width: 468px) {
+  .graf-edu .card-edu .msg-loading{
+    font-size: 15px;
+  }
 
   /*=========================resposividade do footer===================*/
+
   footer {
     display: flex;
     flex-direction: column;
