@@ -175,3 +175,94 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
 })
+
+
+// =============== Gráfico e Chamada api pra infraestutura =============================
+
+document.addEventListener('DOMContentLoaded', function () {
+    const loading = document.getElementById('loading-infra')
+    const error = document.getElementById('error-infra')
+    const canvas = document.getElementById('infraChart')
+
+    const apiUrl = 'https://api.qedu.org.br/v1/censo/territorio'
+    const token = 'VWFtMhR85XttcftnC0hmdPbvgf8dTPkQwDF86XpI'
+
+    const params = {
+        ibge_id: 21,
+        ano: 2023,
+        dependencia_id: 2,
+        ciclo_id: 'EM'
+    };
+
+    axios.get(apiUrl, {
+        headers: {
+            'Accept': 'application/json',
+            'Authorization': `Bearer ${token}`
+        },
+        params
+    })
+        .then(response => {
+            const data = response.data.data[0]
+            console.log('Dados recebidos da API:', data)
+
+            if (!data) {
+                throw new Error('Dados de infraestrutura não encontrados.')
+            }
+
+            const quadra = data.dependencias_quadra_esportes || 0
+            const labInfo = data.dependencias_lab_informatica || 0
+            const labCiencias = data.dependencias_lab_ciencias || 0
+            const biblioteca = data.dependencias_biblioteca || 0
+
+            const labels = [
+                'Quadra de Esportes',
+                'Lab. de Informática',
+                'Lab. de Ciências',
+                'Biblioteca'
+            ];
+            const values = [quadra, labInfo, labCiencias, biblioteca]
+
+            renderChart(labels, values);
+            loading.style.display = 'none'
+            canvas.style.display = 'block'
+        })
+        .catch(err => {
+            console.error('Erro:', err);
+            error.textContent = 'Erro ao buscar dados de infraestrutura: ' + err.message
+            error.style.display = 'block'
+            loading.style.display = 'none'
+        })
+
+    function renderChart(labels, values) {
+        const ctx = canvas.getContext('2d')
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Quantidade de Escolas com Estrutura',
+                    data: values,
+                    backgroundColor: ['#4caf50', '#2196f3', '#ff9800', '#9c27b0']
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Infraestrutura das Escolas Estaduais - Maranhão (EM) - 2023'
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Quantidade de Escolas'
+                        }
+                    }
+                }
+            }
+        })
+    }
+})

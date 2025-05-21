@@ -502,7 +502,13 @@ a {
   .graf-edu .card-edu .msg-loading{
     font-size: 15px;
   }
+.card-edu {
+    width: 100%;
+    height: auto;
+    margin: 30px 0;
 
+  }
+ 
   /*=========================resposividade do footer===================*/
 
   footer {
