@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const token = 'VWFtMhR85XttcftnC0hmdPbvgf8dTPkQwDF86XpI'
 
     const params = {
-        id: 2111300,       // São Luís - MA
+        id: 2111300,  
         ano: 2019
     }
 
