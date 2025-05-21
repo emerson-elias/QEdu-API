@@ -162,10 +162,10 @@ header .collapse.open span:nth-child(3) {
   align-items: center;
   flex-direction: column;
   width: 35vw;
-  height: auto;
+  height: 25vw;
   background-color: var(--color-gray);
   margin: 2vmax;
-  padding: 1.2vmax 0;
+  padding: 2vmax;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -175,7 +175,7 @@ header .collapse.open span:nth-child(3) {
   color: var(--color-black-smoker);
 }
 
-.graf-edu .card-edu .msg-loading{
+.graf-edu .card-edu .msg-loading {
   font-size: 1.3vmax;
   font-weight: bold;
   color: var(--color-blue-smoker);
@@ -184,7 +184,7 @@ header .collapse.open span:nth-child(3) {
 
 /* =============================== CSS DASHBOARD ================================== */
 
-.section-land{
+.section-land {
   position: relative;
   background: url('../assets/img/background.png');
   background-attachment: fixed;
@@ -199,12 +199,12 @@ header .collapse.open span:nth-child(3) {
   flex-direction: column;
 }
 
-.section-land h1{
+.section-land h1 {
   font-size: 2vmax;
   color: var(--color-black-smoker);
 }
 
-.section-land p{
+.section-land p {
   width: 30%;
   margin: 2vmax 0;
   text-align: center;
@@ -213,7 +213,7 @@ header .collapse.open span:nth-child(3) {
 }
 
 .btn-grad {
-  background-image: linear-gradient(to right, #92ede8 0%, #0ED2F7  51%, #B2FEFA  100%);
+  background-image: linear-gradient(to right, #92ede8 0%, #0ED2F7 51%, #B2FEFA 100%);
   width: auto;
   height: auto;
   padding: 1vmax 1.4vmax;
@@ -221,14 +221,14 @@ header .collapse.open span:nth-child(3) {
   text-transform: uppercase;
   transition: var(--effect-ease);
   background-size: 200% auto;
-  color: var(--color-black-smoker);            
+  color: var(--color-black-smoker);
   border-radius: 50px;
   border: none;
   cursor: pointer;
 }
 
 .btn-grad:hover {
-  background-position: right center; 
+  background-position: right center;
   color: var(--color-blue-smoker);
   text-decoration: none;
 }
@@ -386,7 +386,7 @@ a {
     top: 0;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     flex-direction: column;
     justify-content: space-evenly;
     background-color: var(--color-blue-smoker);
@@ -406,8 +406,9 @@ a {
     pointer-events: all;
   }
 
-  .card-edu {
-    width: 50vw;
+  .graf-edu .card-edu {
+    width: 500px !important;
+    height: 300px !important;
     margin: 30px;
     padding: 30px 15px;
 
@@ -493,22 +494,32 @@ a {
 @media (max-width: 768px) {
 
   .card-edu {
-    width: 80%;
+    width: 100% !important;
+    background-color: transparent !important;
+    border: 2px solid var(--border-color);
+    box-shadow: none;
   }
-
+  
 }
 
 @media (max-width: 468px) {
-  .graf-edu .card-edu .msg-loading{
+
+  .graf-edu {
+    padding: 15vmax 1vmax;
+  }
+
+  .graf-edu .card-edu {
+    width: 100% !important;
+    height: 300px !important;
+    margin: 30px;
+    padding: 30px 15px;
+    margin: 30px 0;
+  }
+
+  .graf-edu .card-edu .msg-loading {
     font-size: 15px;
   }
-.card-edu {
-    width: 100%;
-    height: auto;
-    margin: 30px 0;
 
-  }
- 
   /*=========================resposividade do footer===================*/
 
   footer {

@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             const datasets = results.map((cidade, index) => {
 
-                const colors = ['#4CAF50', '#2196F3']
+                const colors = ['#F5004F', '#2196F3']
                 return {
                     label: cidade.nome,
                     data: [
@@ -72,6 +72,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
                     title: {
                         display: true,
@@ -160,6 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
                     title: {
                         display: true,
@@ -236,7 +238,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function renderChart(labels, values) {
         const ctx = canvas.getContext('2d')
         new Chart(ctx, {
-            type: 'bar',
+            type: 'pie',
             data: {
                 labels: labels,
                 datasets: [{
@@ -247,6 +249,7 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             options: {
                 responsive: true,
+                maintainAspectRatio: false,
                 plugins: {
                     title: {
                         display: true,
